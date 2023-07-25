@@ -81,7 +81,7 @@ const run = async () => {
       res.send({ status: true, data: book });
     });
 
-    app.post("/book", async (req, res) => {
+    app.post("/book", verifyJwt, async (req, res) => {
       const book = req.body;
       // console.log(book);
 
